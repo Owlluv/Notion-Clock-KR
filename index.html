@@ -13,10 +13,8 @@
       justify-content: center;
       align-items: left;
       max-width: 95%;
-      margin: auto;
+      margin: none;
       color: rgba(225,225,225,0.81);
-      border-radius: 3px;
-      padding: 16px 16px 16px 12px;
     }
 
     #clock {
@@ -40,15 +38,15 @@
       text-align: left;
     }
   </style>
- <script>
+  <script>
     function updateClock() {
       var date = new Date();
       var kstDate = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
-      var hours = estDate.getHours();
-      var minutes = estDate.getMinutes();
+      var hours = kstDate.getHours();
+      var minutes = kstDate.getMinutes();
       var period = "am";
-      var day = estDate.getDate();
-      var month = estDate.getMonth();
+      var day = kstDate.getDate();
+      var month = kstDate.getMonth();
       var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
@@ -78,7 +76,7 @@
       // Format the date as full day name, full month name, DD, YYYY
       var dayOfWeek = daysOfWeek[kstDate.getDay()];
       var monthName = months[month];
-      var dateFormatted = dayOfWeek + ', ' + monthName + ' ' + day + ', ' + estDate.getFullYear();
+      var dateFormatted = dayOfWeek + ', ' + monthName + ' ' + day + ', ' + kstDate.getFullYear();
 
       // Update the date element
       document.getElementById('date').textContent = dateFormatted;
